@@ -1,8 +1,10 @@
-export default function Auth({ children }: { children: React.ReactNode }) {
+import AuthWrapper from "./components/auth-wrapper";
+
+export default function AuthLayout({ children }: { children: React.ReactElement }) {
+
   return (
-    <>
-      Auth Layout
+    <AuthWrapper>
       {children}
-    </>
+    </AuthWrapper>
   );
 }
