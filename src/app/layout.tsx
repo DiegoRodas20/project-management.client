@@ -1,19 +1,21 @@
+import ProviderWrapper from "shared/providers/provider-wrapper";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Task Management",
-  description: "Task Management By Reccio and Rodas",
+    title: "Task Management",
+    description: "Task Management By Reccio and Rodas",
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+    children
+}: {
+    children: React.ReactElement;
+}) {
+    return (
+        <html lang="en">
+            <body>
+                <ProviderWrapper>{children}</ProviderWrapper>
+            </body>
+        </html>
+    );
 }
