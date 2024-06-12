@@ -1,4 +1,3 @@
-import ProviderWrapper from "shared/providers/provider-wrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

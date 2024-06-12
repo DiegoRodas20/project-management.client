@@ -1,9 +1,7 @@
+import DashboardLayout from "./layout/dashboard-layout";
 
-export default function Admin({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
-      Admin Layout
-      {children}
-    </div>
+    <DashboardLayout>{children}</DashboardLayout>
   );
 }
