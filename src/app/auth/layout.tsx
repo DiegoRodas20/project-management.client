@@ -3,8 +3,6 @@ import AuthWrapper from "./components/auth-wrapper";
 export default function AuthLayout({ children }: { children: React.ReactElement }) {
 
   return (
-    <AuthWrapper>
-      {children}
-    </AuthWrapper>
+    <AuthWrapper>{children}</AuthWrapper>
   );
 }
