@@ -6,7 +6,6 @@ interface Props {
 }
 
 const DrawerTest = ({ window }: Props) => {
-
     const container =
         window !== undefined ? () => window().document.body : undefined;
 
@@ -21,19 +20,17 @@ const DrawerTest = ({ window }: Props) => {
                 open={true}
                 ModalProps={{ keepMounted: true }}
                 sx={{
-                    display: { xs: 'block', lg: 'none' },
-                    '& .MuiDrawer-paper': {
-                        boxSizing: 'border-box',
+                    display: { xs: "block", lg: "none" },
+                    "& .MuiDrawer-paper": {
+                        boxSizing: "border-box",
                         width: 280,
                         borderRight: `1px solid #BEC8D0`,
-                        backgroundImage: 'none',
-                        boxShadow: 'inherit'
-                    }
-                }}>
-
-            </Drawer>
+                        backgroundImage: "none",
+                        boxShadow: "inherit",
+                    },
+                }}></Drawer>
         </Box>
-    )
+    );
 };
 
 export default Drawer;
