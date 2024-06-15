@@ -1,8 +1,14 @@
 import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
 import { ReactElement } from 'react';
+import './auth-card.scss';
 
 const AuthCard = ({ children }: { children: ReactElement }) => (
-    <Box sx={{ p: { xs: 2, sm: 3, md: 4, xl: 5 } }}>{children}</Box>
+    <Card>
+        <Box className='auth-card'>
+            {children}
+        </Box>
+    </Card>
 );
 
 export default AuthCard;
