@@ -1,22 +1,18 @@
 import Logo from "../../logo/logo";
 import DrawerHeaderStyled from "./drawer-header-styled";
 
-interface Props {
-    open: boolean;
-}
-
-const DrawerHeader = ({ open }: Props) => {
+const DrawerHeader = ({ open }: { open: boolean }) => {
     return (
         <DrawerHeaderStyled
             open={true}
             sx={{
-                minHeight: "unset",
+                minHeight: 74,
                 width: { xs: "100%", lg: 280 + 50 },
                 paddingTop: { xs: "10px", lg: "0" },
                 paddingBottom: { xs: "18px", lg: "0" },
                 paddingLeft: { xs: "24px", lg: "0" },
             }}>
-            <Logo/>
+            <Logo sx={{ width: open ? 'auto' : 52, height: 'auto' }} />
         </DrawerHeaderStyled>
     );
 };
