@@ -1,3 +1,4 @@
+import DrawerHeader from "@/shared/components/drawer/drawer-header/drawer-header";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 
@@ -20,17 +21,18 @@ const DrawerTest = ({ window }: Props) => {
                 open={true}
                 ModalProps={{ keepMounted: true }}
                 sx={{
-                    display: { xs: "block", lg: "none" },
                     "& .MuiDrawer-paper": {
                         boxSizing: "border-box",
                         width: 280,
-                        borderRight: `1px solid #BEC8D0`,
+                        borderRight: `1px solid #00000`,
                         backgroundImage: "none",
                         boxShadow: "inherit",
                     },
-                }}></Drawer>
+                }}>
+                <DrawerHeader open={true}></DrawerHeader>
+            </Drawer>
         </Box>
     );
 };
 
-export default Drawer;
+export default DrawerTest;

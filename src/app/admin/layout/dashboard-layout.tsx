@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Container, Toolbar } from '@mui/material';
 import { ReactNode } from "react";
 import Header from './header';
@@ -11,7 +13,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             <DrawerTest />
 
             <Box component="main" sx={{ width: `calc(100% - 280px)`, flexGrow: 1, p: { xs: 1, sm: 3 } }}>
-                <Toolbar sx={{ mt: 'horizontal', mb: 'horizontal' }}></Toolbar>
+                <Toolbar sx={{ mt: 'inherit', mb: 'inherit' }}></Toolbar>
                 <Container
                     maxWidth={'xl'}
                     sx={{
@@ -21,7 +23,6 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
                         display: 'flex',
                         flexDirection: 'column'
                     }}>
-
                     {children}
                 </Container>
             </Box>
