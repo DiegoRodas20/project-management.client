@@ -1,3 +1,4 @@
+import ProviderWrapper from "@/shared/providers/provider-wrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +14,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                {children}
+                <ProviderWrapper>
+                    {children}
+                </ProviderWrapper>
             </body>
         </html>
     );
