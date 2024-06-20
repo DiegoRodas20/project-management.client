@@ -2,16 +2,18 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Theme, ThemeProvider } from '@mui/material/styles';
 import { ReactNode } from "react";
 import createThemeOptions from './create-theme-options';
+import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 
 export default function ThemeCustomization({ children }: { children: ReactNode }) {
 
     const theme: Theme = createThemeOptions();
 
     return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline>
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <CssBaseline enableColorScheme />
                 {children}
-            </CssBaseline>
-        </ThemeProvider>
+            </ThemeProvider>
+        </StyledEngineProvider>
     );
 }
