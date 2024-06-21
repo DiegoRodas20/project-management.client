@@ -10,7 +10,7 @@ export const HEADER_HEIGHT = 74;
 
 const roboto = Roboto({
     subsets: ["latin"],
-    weight: ["300", "400", "500", "700"],
+    weight: ["300", "400", "500", "700" ],
 });
 
 const configuration: ThemeCustomization = {
