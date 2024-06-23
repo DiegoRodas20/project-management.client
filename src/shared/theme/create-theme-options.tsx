@@ -1,13 +1,21 @@
-import { ThemeOptions, createTheme } from "@mui/material/styles";
-import useConfig from "../hooks/use-config";
+import { Theme, ThemeOptions, TypographyVariantsOptions, createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
+import useConfig from "../hooks/use-config";
+import Options from "./options";
+import Palette from "./palette";
+import Typography from "./typography";
 
 const createThemeOptions = () => {
+  
   const { fontFamily, mode } = useConfig();
 
-//   const themeOptions: ThemeOptions = useMemo(() => ());
+  const palette: Theme = useMemo<Theme>(() => Palette(mode), [mode]);
 
-  const theme = createTheme();
+  const typography: TypographyVariantsOptions = useMemo<TypographyVariantsOptions>(() => Typography(fontFamily), [fontFamily]);
+
+  const options: ThemeOptions = useMemo<ThemeOptions>(() => Options(palette, typography), [palette, typography]);
+
+  const theme = createTheme(options);
 
   return theme;
 };
