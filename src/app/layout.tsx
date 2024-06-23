@@ -6,11 +6,7 @@ export const metadata: Metadata = {
     description: "Task Management By Reccio and Rodas",
 };
 
-export default function RootLayout({
-    children
-}: {
-    children: React.ReactElement;
-}) {
+export default function RootLayout({ children }: { children: React.ReactElement }) {
     return (
         <html lang="en">
             <body>
