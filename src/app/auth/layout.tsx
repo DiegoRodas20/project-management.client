@@ -1,4 +1,4 @@
-import AuthWrapper from "./components/auth-wrapper/auth-wrapper";
+import AuthWrapper from "@/shared/components/auth-wrapper/auth-wrapper";
 
 
 export default function AuthLayout({ children }: { children: React.ReactElement }) {
