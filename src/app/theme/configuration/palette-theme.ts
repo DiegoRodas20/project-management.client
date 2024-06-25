@@ -1,6 +1,6 @@
 import { SimplePaletteColorOptions } from '@mui/material/styles';
 import { ThemeMode } from "../enums/theme-mode.enum";
-import { PaletteThemeProps } from "../types/theme.type";
+import { PaletteThemeProps } from '../types/palette.type';
 
 
 const PaletteTheme = (mode: ThemeMode): PaletteThemeProps => {

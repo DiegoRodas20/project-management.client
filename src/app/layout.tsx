@@ -1,5 +1,5 @@
-import ProviderWrapper from "@/shared/providers/provider-wrapper";
 import type { Metadata } from "next";
+import ProviderWrapper from "./theme/providers/provider-wrapper";
 
 export const metadata: Metadata = {
     title: "Task Management",

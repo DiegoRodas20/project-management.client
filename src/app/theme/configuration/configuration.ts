@@ -1,6 +1,6 @@
 import { Roboto } from "next/font/google";
 import { ThemeMode } from "../enums/theme-mode.enum";
-import { ThemeCustomization } from "../types/theme-customization.type";
+import { ThemeCustomization } from "../types/theme.type";
 
 export const APP_DEFAULT_PATH = '/admin/dashboard';
 export const HORIZONTAL_MAX_ITEM = 6;
