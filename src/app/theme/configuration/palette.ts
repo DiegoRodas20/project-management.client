@@ -1,8 +1,8 @@
 import { PaletteMode } from '@mui/material';
 import { ThemeOptions, createTheme } from '@mui/material/styles';
-import { ThemeMode } from "../enums/theme-mode.enum";
-import { PaletteThemeProps } from "../types/theme.type";
-import PaletteTheme from "./palette-theme";
+import { ThemeMode } from '../enums/theme-mode.enum';
+import { PaletteThemeProps } from '../types/palette.type';
+import PaletteTheme from './palette-theme';
 
 
 const Palette = (mode: ThemeMode) => {

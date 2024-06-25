@@ -1,5 +1,5 @@
 import { TypographyVariantsOptions } from '@mui/material/styles';
-import { FontFamily } from "../types/theme-customization.type";
+import { FontFamily } from '../types/font-family.type';
 
 
 const Typography = (fontFamily: FontFamily): TypographyVariantsOptions => ({

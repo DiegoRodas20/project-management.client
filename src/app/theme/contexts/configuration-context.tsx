@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import configuration from "../theme/configuration";
+import configuration from "../configuration/configuration";
 
 const ConfigurationContext = createContext(configuration);
 

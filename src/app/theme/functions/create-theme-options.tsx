@@ -1,9 +1,9 @@
 import { Theme, ThemeOptions, TypographyVariantsOptions, createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
-import useConfig from "../hooks/use-config";
-import Options from "./options";
-import Palette from "./palette";
-import Typography from "./typography";
+import Options from "../configuration/options";
+import useConfig from "../hooks/useConfig";
+import Palette from "../configuration/palette";
+import Typography from "../configuration/typography";
 
 const createThemeOptions = () => {
   

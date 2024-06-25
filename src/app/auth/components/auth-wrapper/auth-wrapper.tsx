@@ -8,7 +8,7 @@ import "./auth-wrapper.scss";
 const AuthWrapper = ({ children }: { children: ReactElement }) => (
 
     <Box className="auth-wrapper">
-        <AuthBackground></AuthBackground>
+        <AuthBackground />
         <Grid container className="grid1">
             <Grid item xs={12}>
                 <Grid item xs={12} container className="grid2">

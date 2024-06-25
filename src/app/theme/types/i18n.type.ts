@@ -1,0 +1,1 @@
+export type I18n = 'en' | 'fr' | 'ro' | 'zh';
