@@ -1,9 +1,8 @@
-import AuthWrapper from "@/shared/components/auth-wrapper/auth-wrapper";
+type Props = {
+  children: React.ReactNode
+}
 
+export default function AuthLayout({ children }: Props) {
 
-export default function AuthLayout({ children }: { children: React.ReactElement }) {
-
-  return (
-    <AuthWrapper>{children}</AuthWrapper>
-  );
+  return ({ children });
 }
