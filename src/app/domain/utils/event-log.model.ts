@@ -1,6 +1,6 @@
 export interface EventLog {
     _id: string;
-    LogType: 'INFO' | 'ERROR';
+    LogType: string;
     AppName: string;
     CreatedDate: string;
     ResourceUrl: string;

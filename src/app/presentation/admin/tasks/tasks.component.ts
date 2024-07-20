@@ -20,7 +20,7 @@ export class TasksComponent implements OnInit {
         this.getTasks()
     }
 
-    private async getTasks(){
+    public async getTasks(){
         this.tasks = (await this._getTasksQuery.execute()).data
     }
 }

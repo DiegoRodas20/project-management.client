@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 import { AdminRoutingModule } from './admin.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EventLogsComponent } from './event-logs/event-logs.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { HeaderComponent } from './layout/components/header/header.componet';
 import { SidebarComponent } from './layout/components/sidebar/sidebar.component';
@@ -19,7 +20,8 @@ const COMPONENTS = [
     DashboardComponent,
     ProjectsComponent,
     InvoicesComponent,
-    TasksComponent
+    TasksComponent,
+    EventLogsComponent
 ];
 
 @NgModule({

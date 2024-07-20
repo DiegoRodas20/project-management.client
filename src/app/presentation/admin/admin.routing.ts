@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
 import { ADMIN_PATH } from "@shared/routes/path.routes";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { EventLogsComponent } from "./event-logs/event-logs.component";
 import { InvoicesComponent } from "./invoices/invoices.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { ProjectsComponent } from "./projects/projects.component";
@@ -27,7 +28,11 @@ const routes: Routes = [
             {
                 path: ADMIN_PATH.INVOICES,
                 component: InvoicesComponent
-            }
+            },
+            {
+                path: ADMIN_PATH.EVENT_LOGS,
+                component: EventLogsComponent
+            },
         ]
     }
 ]

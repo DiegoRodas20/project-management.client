@@ -1,0 +1,35 @@
+<div class="card">
+    <p-table [value]="eventLogs" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                Event Logs
+                <p-button icon="pi pi-refresh" (onClick)="getEventLogs()"/>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Log Type</th>
+                <th>App Name</th>
+                <th>Created Date</th>
+                <th>Resource Url</th>
+                <th>Message</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-eventlog>
+            <tr>
+                <td>{{eventlog._id}}</td>
+                <td>{{eventlog.LogType}}</td>
+                <td>{{eventlog.AppName}}</td>
+                <td>{{eventlog.CreatedDate}}</td>
+                <td>{{eventlog.ResourceUrl}}</td>
+                <td>{{eventlog.Message}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                Total
+            </div>
+        </ng-template>
+    </p-table>
+</div>

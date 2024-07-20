@@ -11,5 +11,6 @@ export const ADMIN_PATH = {
     DASHBOARD: 'dashboard',
     INVOICES: 'invoices',
     PROJECTS: 'projects',
-    TASKS: 'tasks'
+    TASKS: 'tasks',
+    EVENT_LOGS: 'event-logs',
 }

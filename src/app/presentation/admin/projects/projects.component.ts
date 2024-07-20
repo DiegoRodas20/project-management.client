@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit {
         this.getProjects()
     }
 
-    private async getProjects() {
+    public async getProjects() {
         this.projects = (await this._getProjectsQuery.execute()).data
     }
 }
