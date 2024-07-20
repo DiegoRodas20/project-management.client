@@ -1,1 +1,37 @@
-<div>TASKS COMPONENT</div>
+<div class="card">
+    <p-table [value]="tasks" [tableStyle]="{'min-width': '60rem'}">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                Proyectos
+                <p-button icon="pi pi-refresh" />
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Area Path</th>
+                <th>Team Project</th>
+                <th>State</th>
+                <th>Reason</th>
+                <th>Created Date</th>
+                <th>Priority</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-task>
+            <tr>
+                <td>{{task.id}}</td>
+                <td>{{task.areaPath}}</td>
+                <td>{{task.teamProject}}</td>
+                <td>{{task.state}}</td>
+                <td>{{task.reason}}</td>
+                <td>{{task.createdDate}}</td>
+                <td>{{task.priority}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                En total...
+            </div>
+        </ng-template>
+    </p-table>
+</div>

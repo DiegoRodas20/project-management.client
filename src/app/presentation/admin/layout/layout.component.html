@@ -1,2 +1,14 @@
-<div>ADMIN LAYOUT COMPONENT</div>
-<router-outlet></router-outlet>
+<div class="layout">
+
+    <app-sidebar></app-sidebar>
+
+    <div class="layout__box">
+
+        <app-header></app-header>
+
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+
+    </div>
+</div>

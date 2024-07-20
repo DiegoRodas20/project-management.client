@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { GetProjectsQuery } from "app/application/projects/get-projects/get-projects.query";
+import { Project } from "app/domain/projects/project.model";
 
 @Component({
     selector: 'app-projects',
@@ -8,7 +10,17 @@ import { Component, OnInit } from "@angular/core";
 
 export class ProjectsComponent implements OnInit {
 
-    constructor() { }
+    projects!: Project[];
 
-    ngOnInit() { }
+    constructor(
+        private _getProjectsQuery: GetProjectsQuery
+    ) { }
+
+    async ngOnInit() {
+        this.getProjects()
+    }
+
+    private async getProjects() {
+        this.projects = (await this._getProjectsQuery.execute()).data
+    }
 }

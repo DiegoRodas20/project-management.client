@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { GetTasksQuery } from "app/application/tasks/get-tasks/get-tasks.query";
+import { Task } from "app/domain/tasks/task.model";
 
 @Component({
     selector: 'app-tasks',
@@ -8,7 +10,17 @@ import { Component, OnInit } from "@angular/core";
 
 export class TasksComponent implements OnInit {
 
-    constructor() { }
+    tasks!: Task[]
 
-    ngOnInit() { }
+    constructor(
+        private _getTasksQuery: GetTasksQuery
+    ) { }
+
+    ngOnInit() { 
+        this.getTasks()
+    }
+
+    private async getTasks(){
+        this.tasks = (await this._getTasksQuery.execute()).data
+    }
 }

@@ -1,0 +1,21 @@
+.layout {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 100%;
+    flex-direction: column;
+
+    &__box {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+
+        @media (min-width: 1200px) {
+            padding-left: 300px;
+
+        }
+    }
+
+    & main {
+        padding: 40px;
+    }
+}

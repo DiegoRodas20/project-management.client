@@ -14,7 +14,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: APP_ROUTES.SIGN_IN,
+        redirectTo: APP_ROUTES.DASHBOARD,
         pathMatch: 'full'
     }
 ]
