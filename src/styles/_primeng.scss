@@ -1,0 +1,29 @@
+.p-component {
+    font-size: 14px !important;
+}
+
+.p-datatable .p-datatable-thead>tr>th {
+    background: transparent;
+    border: transparent;
+}
+
+.p-datatable-table {
+    border-spacing: 0 10px;
+}
+
+td {
+
+    &:first-child {
+        border-top-left-radius: .6rem;
+        border-bottom-left-radius: .6rem;
+    }
+
+    &:last-child {
+        border-top-right-radius: .6rem;
+        border-bottom-right-radius: .6rem;
+    }
+}
+
+.p-paginator {
+    background: transparent;
+}

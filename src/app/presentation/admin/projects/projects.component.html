@@ -1,37 +1,47 @@
-<div class="card">
-    <p-table [value]="projects" [tableStyle]="{'min-width': '60rem'}">
-        <ng-template pTemplate="caption">
-            <div class="flex align-items-center justify-content-between">
-                Proyectos
-                <p-button icon="pi pi-refresh" (onClick)="getProjects()"/>
-            </div>
-        </ng-template>
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Id</th>
-                <th>Area Path</th>
-                <th>Team Project</th>
-                <th>State</th>
-                <th>Reason</th>
-                <th>Created Date</th>
-                <th>Priority</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-project>
-            <tr>
-                <td>{{project.id}}</td>
-                <td>{{project.areaPath}}</td>
-                <td>{{project.teamProject}}</td>
-                <td>{{project.state}}</td>
-                <td>{{project.reason}}</td>
-                <td>{{project.createdDate}}</td>
-                <td>{{project.priority}}</td>
-            </tr>
-        </ng-template>
-        <!-- <ng-template pTemplate="summary">
-            <div class="flex align-items-center justify-content-between">
-                En total...
-            </div>
-        </ng-template> -->
+<div class="grid">
+  <div class="col-12">
+    <h2>Proyectos</h2>
+    <p-table
+      [value]="projects"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '50rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Id</th>
+          <th>Proyecto</th>
+          <th>Fecha de Creación</th>
+          <th>Responsable</th>
+          <th>Estado</th>
+          <th>Opciones</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-project>
+        <tr>
+          <td>{{ project.id }}</td>
+          <td>{{ project.title }}</td>
+          <td>{{ project.createdDate | date : "dd/MM/yyyy" }}</td>
+          <td>{{ project.assignedTo.firstName }}</td>
+          <td>
+            <p-badge [value]="project.state" severity="success" />
+          </td>
+          <td>
+            <p-button
+              icon="pi pi-search"
+              [rounded]="true"
+              [text]="true"
+              severity="success"
+            />
+            <p-button
+              icon="pi pi-user"
+              [rounded]="true"
+              [text]="true"
+              severity="info"
+            />
+          </td>
+        </tr>
+      </ng-template>
     </p-table>
+  </div>
 </div>

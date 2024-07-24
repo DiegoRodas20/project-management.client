@@ -1,37 +1,47 @@
-<div class="card">
-    <p-table [value]="tasks" [tableStyle]="{'min-width': '60rem'}">
-        <ng-template pTemplate="caption">
-            <div class="flex align-items-center justify-content-between">
-                Tareas
-                <p-button icon="pi pi-refresh" (onClick)="getTasks()"/>
-            </div>
-        </ng-template>
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Id</th>
-                <th>Area Path</th>
-                <th>Team Project</th>
-                <th>State</th>
-                <th>Reason</th>
-                <th>Created Date</th>
-                <th>Priority</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-task>
-            <tr>
-                <td>{{task.id}}</td>
-                <td>{{task.areaPath}}</td>
-                <td>{{task.teamProject}}</td>
-                <td>{{task.state}}</td>
-                <td>{{task.reason}}</td>
-                <td>{{task.createdDate}}</td>
-                <td>{{task.priority}}</td>
-            </tr>
-        </ng-template>
-        <!-- <ng-template pTemplate="summary">
-            <div class="flex align-items-center justify-content-between">
-                En total...
-            </div>
-        </ng-template> -->
+<div class="grid">
+  <div class="col-12">
+    <h2>Tareas</h2>
+    <p-table
+      [value]="tasks"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '60rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Id</th>
+          <th>Tarea</th>
+          <th>Fecha de Creación</th>
+          <th>Responsable</th>
+          <th>Estado</th>
+          <th>Opciones</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-task>
+        <tr>
+          <td>{{ task.id }}</td>
+          <td>{{ task.title }}</td>
+          <td>{{ task.createdDate | date : "dd/MM/yyyy"  }}</td>
+          <td>{{ task?.assignedTo?.firstName }}</td>
+          <td>
+            <p-badge [value]="task.state" severity="success" />
+          </td>
+          <td>
+            <p-button
+              icon="pi pi-search"
+              [rounded]="true"
+              [text]="true"
+              severity="success"
+            />
+            <p-button
+              icon="pi pi-user"
+              [rounded]="true"
+              [text]="true"
+              severity="info"
+            />
+          </td>
+        </tr>
+      </ng-template>
     </p-table>
+  </div>
 </div>

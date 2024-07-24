@@ -4,10 +4,12 @@
     min-height: 100%;
     flex-direction: column;
 
-    &__box {
+    &__content {
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
+
+        background: #f1f5f9;
 
         @media (min-width: 1200px) {
             padding-left: 300px;

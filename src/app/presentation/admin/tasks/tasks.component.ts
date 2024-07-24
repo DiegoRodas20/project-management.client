@@ -22,5 +22,6 @@ export class TasksComponent implements OnInit {
 
     public async getTasks(){
         this.tasks = (await this._getTasksQuery.execute()).data
+        console.log(this.tasks)
     }
 }

@@ -1,14 +1,12 @@
 <div class="layout">
-
+  <div class="layout__sidebar">
     <app-sidebar></app-sidebar>
+  </div>
+  <div class="layout__content">
+    <app-header></app-header>
 
-    <div class="layout__box">
-
-        <app-header></app-header>
-
-        <main>
-            <router-outlet></router-outlet>
-        </main>
-
-    </div>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>
