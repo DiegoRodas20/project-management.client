@@ -21,7 +21,7 @@
           <td>{{ eventlog._id }}</td>
           <td>{{ eventlog.LogType }}</td>
           <td>{{ eventlog.AppName }}</td>
-          <td>{{ eventlog.CreatedDate }}</td>
+          <td>{{ eventlog.CreatedDate | date : "dd/MM/yyyy" }}</td>
           <td>{{ eventlog.Message }}</td>
         </tr>
       </ng-template>
