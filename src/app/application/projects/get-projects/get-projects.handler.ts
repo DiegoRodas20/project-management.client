@@ -5,7 +5,7 @@ import { Response } from "app/domain/utils/response.model"
 import { GetProjectsQuery } from "./get-projects.query"
 
 @Injectable()
-export class GteProjectsHandler implements GetProjectsQuery {
+export class GetProjectsHandler implements GetProjectsQuery {
 
     constructor(
         private _projectRepository: IProjectRepository

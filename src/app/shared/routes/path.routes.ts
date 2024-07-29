@@ -9,8 +9,8 @@ export const AUTH_PATH = {
 
 export const ADMIN_PATH = {
     DASHBOARD: 'dashboard',
-    INVOICES: 'invoices',
     PROJECTS: 'projects',
     TASKS: 'tasks',
+    INVOICES: 'invoices',
     EVENT_LOGS: 'event-logs',
 }
