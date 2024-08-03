@@ -3,10 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ADMIN_PATH } from "@shared/routes/path.routes";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { EventLogsComponent } from "./event-logs/event-logs.component";
-import { InvoicesComponent } from "./invoices/invoices.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { ProjectsComponent } from "./projects/projects.component";
-import { TasksComponent } from "./tasks/tasks.component";
 
 const routes: Routes = [
     {
@@ -20,14 +18,6 @@ const routes: Routes = [
             {
                 path: ADMIN_PATH.PROJECTS,
                 component: ProjectsComponent
-            },
-            {
-                path: ADMIN_PATH.TASKS,
-                component: TasksComponent
-            },
-            {
-                path: ADMIN_PATH.INVOICES,
-                component: InvoicesComponent
             },
             {
                 path: ADMIN_PATH.EVENT_LOGS,

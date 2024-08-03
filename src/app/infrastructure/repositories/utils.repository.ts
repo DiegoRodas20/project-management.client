@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { EVENTS_URL } from "@shared/constants/url.constants";
-import { EventLog } from "app/domain/utils/event-log.model";
-import { Response } from "app/domain/utils/response.model";
+import { UTILS_URL } from "@shared/constants/url.constants";
+import { CustomResponse } from "app/domain/utils/custom-response";
+import { EventLog } from "app/domain/utils/event-log";
 import { IUtilsRepository } from "app/domain/utils/utils.repository";
 import { lastValueFrom } from "rxjs";
 
@@ -13,8 +13,8 @@ export class UtilsRepository implements IUtilsRepository {
         private _httpClient: HttpClient
     ) { }
 
-    public getEventsLog(): Promise<Response<EventLog[]>> {
+    public getEventsLogs(): Promise<CustomResponse<EventLog[]>> {
 
-        return lastValueFrom(this._httpClient.get<Response<EventLog[]>>(EVENTS_URL))
+        return lastValueFrom(this._httpClient.get<CustomResponse<EventLog[]>>(`${UTILS_URL}/100`))
     }
 }

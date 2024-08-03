@@ -1,8 +1,7 @@
-import { EventLog } from "./event-log.model";
-import { Response } from "./response.model";
+import { EventLog } from "./event-log";
+import { CustomResponse } from "./custom-response";
 
 export abstract class IUtilsRepository {
 
-    abstract getEventsLog(): Promise<Response<EventLog[]>>
-
+    abstract getEventsLogs(): Promise<CustomResponse<EventLog[]>>
 }

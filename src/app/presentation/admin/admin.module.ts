@@ -6,12 +6,14 @@ import { SharedModule } from '@shared/shared.module';
 import { AdminRoutingModule } from './admin.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventLogsComponent } from './event-logs/event-logs.component';
-import { InvoicesComponent } from './invoices/invoices.component';
 import { HeaderComponent } from './layout/components/header/header.componet';
 import { SidebarComponent } from './layout/components/sidebar/sidebar.component';
 import { LayoutComponent } from './layout/layout.component';
+import { CreateProjectComponent } from './projects/components/create-project/create-project.component';
+import { EditProjectComponent } from './projects/components/edit-project/edit-project.component';
+import { GenerateInvoiceComponent } from './projects/components/generate-invoice/generate-invoice.component';
+import { WorkItemsComponent } from './projects/components/work-items/work-items.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { TasksComponent } from './tasks/tasks.component';
 
 const COMPONENTS = [
     LayoutComponent,
@@ -19,9 +21,11 @@ const COMPONENTS = [
     SidebarComponent,
     DashboardComponent,
     ProjectsComponent,
-    InvoicesComponent,
-    TasksComponent,
-    EventLogsComponent
+    EventLogsComponent,
+    CreateProjectComponent,
+    EditProjectComponent,
+    GenerateInvoiceComponent,
+    WorkItemsComponent
 ];
 
 @NgModule({

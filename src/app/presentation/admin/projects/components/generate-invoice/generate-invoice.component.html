@@ -1,0 +1,34 @@
+<div class="generate-invoice">
+  <form [formGroup]="formGroup">
+    <div class="flex flex-column gap-2 mb-4">
+      <label for="username">Fecha</label>
+      <p-calendar
+        [showIcon]="true"
+        inputId="buttondisplay"
+        [showOnFocus]="false"
+        appendTo="body"
+        formControlName="date"
+      />
+    </div>
+
+    <div class="flex flex-column gap-2 mb-4">
+      <label for="username">Precio por Hora</label>
+      <input
+        pInputText
+        id="username"
+        aria-describedby="username-help"
+        formControlName="price"
+      />
+    </div>
+  </form>
+
+  <div class="flex flex-column">
+    <button
+      pButton
+      pRipple
+      label="Generar"
+      class="p-button-primary"
+      (click)="generateInvoice()"
+    ></button>
+  </div>
+</div>

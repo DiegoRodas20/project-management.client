@@ -9,6 +9,7 @@ import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 import { PresentationComponent } from './presentation.component';
 import { PresentationRoutingModule } from './presentation.routing';
+import { DialogService } from 'primeng/dynamicdialog';
 
 @NgModule({
     declarations: [PresentationComponent],
@@ -24,6 +25,7 @@ import { PresentationRoutingModule } from './presentation.routing';
         AuthModule,
         AdminModule,
     ],
+    providers: [DialogService],
     bootstrap: [PresentationComponent]
 })
 

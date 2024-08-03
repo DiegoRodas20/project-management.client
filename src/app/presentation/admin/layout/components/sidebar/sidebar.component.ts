@@ -24,14 +24,6 @@ export class SidebarComponent implements OnInit {
         this._router.navigate([APP_ROUTES.PROJECTS])
     }
 
-    goTasks(){
-        this._router.navigate([APP_ROUTES.TASKS])
-    }
-
-    goInvoices(){
-        this._router.navigate([APP_ROUTES.INVOICES])
-    }
-
     goEventLogs(){
         this._router.navigate([APP_ROUTES.EVENT_LOGS])
     }

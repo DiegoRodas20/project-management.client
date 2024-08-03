@@ -1,6 +1,10 @@
 <div class="grid">
+  <h2 class="col-6">Proyectos</h2>
+  <div class="col-6 align-self-center text-right">
+    <p-button severity="primary" label="Registrar" (onClick)="createProject()"/>
+  </div>
+
   <div class="col-12">
-    <h2>Proyectos</h2>
     <p-table
       [value]="projects"
       [paginator]="true"
@@ -10,9 +14,8 @@
       <ng-template pTemplate="header">
         <tr>
           <th>Id</th>
-          <th>Proyecto</th>
-          <th>Fecha de Creación</th>
-          <th>Responsable</th>
+          <th>Titulo</th>
+          <th>Descripción</th>
           <th>Estado</th>
           <th>Opciones</th>
         </tr>
@@ -21,23 +24,33 @@
         <tr>
           <td>{{ project.id }}</td>
           <td>{{ project.title }}</td>
-          <td>{{ project.createdDate | date : "dd/MM/yyyy" }}</td>
-          <td>{{ project.assignedTo.firstName }}</td>
+          <td>{{ project.description }}</td>
           <td>
-            <p-badge [value]="project.state" severity="success" />
+            <p-tag value="Activo" severity="success" />
           </td>
           <td>
             <p-button
-              icon="pi pi-search"
+              icon="pi pi-pencil"
+              pTooltip="Editar Proyecto"
               [rounded]="true"
-              [text]="true"
+              class="mr-2"
               severity="success"
+              (onClick)="editProject(project.id)"
             />
             <p-button
-              icon="pi pi-user"
+              icon="pi pi-file-import"
+              pTooltip="Generar Factura"
               [rounded]="true"
-              [text]="true"
+              class="mr-2"
               severity="info"
+              (onClick)="generateInvoice(project.id)"
+            />
+            <p-button
+              icon="pi pi-eye"
+              pTooltip="Ver Backlog"
+              [rounded]="true"
+              severity="help"
+              (onClick)="viewWorkItems(project.id)"
             />
           </td>
         </tr>

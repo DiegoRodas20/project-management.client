@@ -1,5 +1,5 @@
 .p-component {
-    font-size: 14px !important;
+    // font-size: 1rem !important;
 }
 
 .p-datatable .p-datatable-thead>tr>th {
@@ -26,4 +26,27 @@ td {
 
 .p-paginator {
     background: transparent;
+}
+
+.p-button {
+    padding: 0.5rem 1rem;
+}
+
+.p-tag.p-tag-success {
+    background: var(--green-100);
+    color: var(--green-700);
+}
+
+.p-checkbox .p-checkbox-box {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.p-checkbox .p-checkbox-box .p-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+.p-calendar {
+    width: 100%;
 }

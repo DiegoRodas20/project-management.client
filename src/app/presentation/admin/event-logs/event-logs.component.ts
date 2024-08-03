@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { GetEventLogsQuery } from "app/application/utils/get-event-logs/get-event-logs.query";
-import { EventLog } from "app/domain/utils/event-log.model";
+import { GetEventsLogsQuery } from "app/application/utils/get-events-logs/get-events-logs.query";
+import { EventLog } from "app/domain/utils/event-log";
 
 @Component({
     selector: 'app-event-logs',
@@ -13,7 +13,7 @@ export class EventLogsComponent implements OnInit {
     eventLogs !: EventLog[]
 
     constructor(
-        private _getEventLogsQuery: GetEventLogsQuery
+        private _getEventLogsQuery: GetEventsLogsQuery
     ) { }
 
     ngOnInit() { 

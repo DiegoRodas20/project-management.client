@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core"
-import { Project } from "app/domain/projects/project.model"
+import { Project } from "app/domain/projects/project"
 import { IProjectRepository } from "app/domain/projects/project.repository"
-import { Response } from "app/domain/utils/response.model"
+import { CustomResponse } from "app/domain/utils/custom-response"
 import { GetProjectsQuery } from "./get-projects.query"
 
 @Injectable()
@@ -11,7 +11,7 @@ export class GetProjectsHandler implements GetProjectsQuery {
         private _projectRepository: IProjectRepository
     ) { }
 
-    public execute(): Promise<Response<Project[]>> {
+    public execute(): Promise<CustomResponse<Project[]>> {
 
         const result = this._projectRepository.getProjects()
 

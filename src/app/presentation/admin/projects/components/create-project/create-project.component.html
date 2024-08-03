@@ -1,0 +1,52 @@
+<div class="create-project">
+  <form [formGroup]="formGroup">
+    <div class="flex flex-column gap-2 mb-4">
+      <label for="username">Titulo</label>
+      <input pInputText id="username" aria-describedby="username-help" formControlName="title"/>
+    </div>
+
+    <div class="flex flex-column gap-2 mb-4">
+      <label for="username">Descripción</label>
+      <textarea rows="5" cols="30" pInputTextarea [autoResize]="true" formControlName="description">
+      </textarea>
+    </div>
+  </form>
+
+  <div class="col-12">
+    <label>Epicas</label>
+    <p-table [value]="epics" [rows]="5" [(selection)]="selectedEpics">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 4rem">
+            <p-tableHeaderCheckbox />
+          </th>
+          <th>Id</th>
+          <th>Titulo</th>
+          <th>Enlace</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-epic>
+        <tr>
+          <td>
+            <p-tableCheckbox [value]="epic" />
+          </td>
+          <td>{{ epic.id }}</td>
+          <td>{{ epic.title }}</td>
+          <td>
+            <a [href]="epic.pageUrl" target="_blank"> Azure DevOps </a>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="flex flex-column">
+    <button
+      pButton
+      pRipple
+      label="Crear"
+      class="p-button-primary"
+      (click)="createProject()"
+    ></button>
+  </div>
+</div>

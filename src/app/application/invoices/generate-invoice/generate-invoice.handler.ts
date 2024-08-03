@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core"
 import { GenerateInvoiceRequest } from "app/domain/invoices/generate-invoice.request"
-import { Invoice } from "app/domain/invoices/invoice.model"
+import { GenerateInvoiceResponse } from "app/domain/invoices/generate-invoice.response"
 import { IInvoiceRepository } from "app/domain/invoices/invoice.repository"
-import { Response } from "app/domain/utils/response.model"
+import { CustomResponse } from "app/domain/utils/custom-response"
 import { saveAs } from 'file-saver'
 import * as XLSX from 'xlsx'
 import { GenerateInvoiceCommand } from "./generate-invoice.command"
@@ -16,7 +16,7 @@ export class GenerateInvoiceHandler implements GenerateInvoiceCommand {
         private _invoiceRepository: IInvoiceRepository
     ) { }
 
-    public async execute(request: GenerateInvoiceRequest): Promise<Response<Invoice[]>> {
+    public async execute(request: GenerateInvoiceRequest): Promise<CustomResponse<GenerateInvoiceResponse[]>> {
 
         const result = await this._invoiceRepository.generateInvoice(request)
 
@@ -27,10 +27,20 @@ export class GenerateInvoiceHandler implements GenerateInvoiceCommand {
         return result
     }
 
-    private exportToExcel(invoices: Invoice[]) {
+    private exportToExcel(invoices: GenerateInvoiceResponse[]) {
 
-        const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(invoices);
-
+        const translatedInvoices = invoices.map(invoice => ({
+            'Proyecto': invoice.project,
+            'Mes': invoice.month,
+            'Año': invoice.year,
+            'Horas': invoice.hours,
+            'Precio Por Hora': invoice.pricePerHour,
+            'Precio Final': invoice.finalPrice,
+            'Tarea': invoice.task,
+            'Fecha': invoice.date,
+        }));
+        
+        const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(translatedInvoices);
         const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
 
         const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });

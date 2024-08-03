@@ -2,8 +2,10 @@ import { environment } from "environments/environment"
 
 export const PROJECT_URL = `${environment.API_URL_BASE}project`
 
-export const TASK_URL = `${environment.API_URL_BASE}task`
+export const WORK_ITEMS_URL = `${environment.API_URL_BASE}work-item`
 
 export const INVOICE_URL = `${environment.API_URL_BASE}invoice`
 
-export const EVENTS_URL = `${environment.API_URL_BASE}logevent/100`
+export const USER_URL = `${environment.API_URL_BASE}user`
+
+export const UTILS_URL = `${environment.API_URL_BASE}utils`
