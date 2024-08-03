@@ -39,7 +39,8 @@ export class WorkItemsComponent implements OnInit {
                 workItemType: workItem.workItemType,
                 title: workItem.title,
                 state: workItem.state,
-                valueArea: workItem.valueArea
+                valueArea: workItem.valueArea,
+                pageUrl: workItem.pageUrl
             },
             children: workItem.items
                 ? workItem.items.map((workItem) => this.transformToTreeNode(workItem))

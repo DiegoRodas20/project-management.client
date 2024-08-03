@@ -11,6 +11,7 @@
         <th>Titulo</th>
         <th>Estado</th>
         <th>Area</th>
+        <th>Link</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
@@ -23,6 +24,9 @@
         <td>{{ rowData.title }}</td>
         <td>{{ rowData.state }}</td>
         <td>{{ rowData.valueArea }}</td>
+        <td>
+          <a [href]="rowData.pageUrl" target="_blank"> Azure DevOps </a>
+        </td>
       </tr>
     </ng-template>
   </p-treeTable>
