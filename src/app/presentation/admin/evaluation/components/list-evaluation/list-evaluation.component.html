@@ -1,0 +1,31 @@
+<div class="grid">
+    <div class="col-12">
+      <p-table
+        [value]="evaluations"
+        [paginator]="true"
+        [rows]="5"
+        [tableStyle]="{ 'min-width': '50rem' }"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Id</th>
+            <th>Corresponde a:</th>
+            <th>Puntaje</th>
+            <th>Estado</th>
+            <th>Fecha creación</th>
+            <th>Fecha actualización</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-person>
+          <tr>
+            <td>{{ person.id }}</td>
+            <td>{{ person.date | date: 'MM/yyyy'}}</td>
+            <td>{{ person.score }}</td>
+            <td>{{ person.isClosed ? 'Cerrado' : 'En proceso' }}</td>
+            <td>{{ person.createdDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{ person.updatedDate | date: 'dd/MM/YYYY'}}</td>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+  

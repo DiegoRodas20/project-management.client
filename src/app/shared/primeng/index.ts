@@ -10,6 +10,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TooltipModule } from 'primeng/tooltip';
 import { TreeTableModule } from 'primeng/treetable';
+import { RatingModule } from 'primeng/rating';
+import { DividerModule } from 'primeng/divider';
 
 export const PRIME_COMPONENTS = [
     ButtonModule,
@@ -23,5 +25,7 @@ export const PRIME_COMPONENTS = [
     InputTextareaModule,
     CheckboxModule,
     TooltipModule,
-    TreeTableModule
+    TreeTableModule,
+    RatingModule,
+    DividerModule
 ]

@@ -14,6 +14,10 @@ import { EditProjectComponent } from './projects/components/edit-project/edit-pr
 import { GenerateInvoiceComponent } from './projects/components/generate-invoice/generate-invoice.component';
 import { WorkItemsComponent } from './projects/components/work-items/work-items.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SafePipe } from '@shared/pipes/safe.pipe';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+import { GenerateEvaluationComponent } from './evaluation/components/generate-evaluation/generate-evaluation.component';
+import { ListEvaluationComponent } from './evaluation/components/list-evaluation/list-evaluation.component';
 
 const COMPONENTS = [
     LayoutComponent,
@@ -25,18 +29,19 @@ const COMPONENTS = [
     CreateProjectComponent,
     EditProjectComponent,
     GenerateInvoiceComponent,
-    WorkItemsComponent
+    WorkItemsComponent,
+    EvaluationComponent
 ];
 
 @NgModule({
-    declarations: [COMPONENTS],
+    declarations: [COMPONENTS, SafePipe, GenerateEvaluationComponent, ListEvaluationComponent],
     imports: [
         CommonModule,
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
         SharedModule,
-        AdminRoutingModule
+        AdminRoutingModule,
     ],
     providers: [],
 })

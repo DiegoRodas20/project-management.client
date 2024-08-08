@@ -27,4 +27,8 @@ export class SidebarComponent implements OnInit {
     goEventLogs(){
         this._router.navigate([APP_ROUTES.EVENT_LOGS])
     }
+
+    goEvaluation(){
+        this._router.navigate([APP_ROUTES.EVALUATION])
+    }
 }
