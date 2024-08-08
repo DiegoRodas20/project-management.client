@@ -13,3 +13,5 @@ export const UTILS_URL = `${environment.API_URL_BASE}utils`
 export const PERSON_URL = `${environment.API_URL_BASE}person`
 
 export const EVALUATION_URL = `${environment.API_URL_BASE}evaluation`
+
+export const EVALUATION_REPORT_URL = `${environment.EVALUATION_REPORT}`

@@ -29,6 +29,8 @@ import { CloseEvaluationCommand } from "./evaluations/close-evaluation/close-eva
 import { CloseEvaluationHandler } from "./evaluations/close-evaluation/close-evaluation.handler";
 import { GetByPersonHandler } from "./evaluations/get-by-person/get-by-person.handler";
 import { GetByPersonQuery } from "./evaluations/get-by-person/get-by-person.query";
+import { GetReportURLQuery } from "./evaluations/get-report-url/get-report-url.query";
+import { GetReportURLHandler } from "./evaluations/get-report-url/get-report-url.handler";
 
 @NgModule({
     providers: [
@@ -58,6 +60,7 @@ import { GetByPersonQuery } from "./evaluations/get-by-person/get-by-person.quer
         { provide: SaveEvaluationCommand, useClass: SaveEvaluationHandler },
         { provide: CloseEvaluationCommand, useClass: CloseEvaluationHandler },
         { provide: GetByPersonQuery, useClass: GetByPersonHandler },
+        { provide: GetReportURLQuery, useClass: GetReportURLHandler },
 
     ]
 })

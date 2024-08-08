@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { EVALUATION_URL } from "@shared/constants/url.constants";
+import { EVALUATION_REPORT_URL, EVALUATION_URL } from "@shared/constants/url.constants";
 import { Evaluation } from "app/domain/evaluations/evaluation";
 import { IEvaluationRepository } from "app/domain/evaluations/evaluation.repository";
 import { SaveEvaluationRequest } from "app/domain/evaluations/save-evaluation.request";
@@ -13,6 +13,14 @@ export class EvaluationRepository implements IEvaluationRepository {
     constructor(
         private _httpClient: HttpClient
     ) { }
+    getURLReport(personId: number): string {
+        var params = {
+            "ds0.personid": personId
+        };
+        var paramsAsString = JSON.stringify(params);
+        var encodedParams = encodeURIComponent(paramsAsString);
+        return `${EVALUATION_REPORT_URL}?params=${encodedParams}`;
+    }
     getByPersonId(personId: number): Promise<CustomResponse<Evaluation[]>> {
         return lastValueFrom(this._httpClient.get<CustomResponse<Evaluation[]>>(`${EVALUATION_URL}/person/${personId}`))
     }

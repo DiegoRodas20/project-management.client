@@ -11,4 +11,7 @@ export abstract class IEvaluationRepository {
     abstract save(evaluation: SaveEvaluationRequest): Promise<CustomResponse<string>>
     
     abstract close(personId: number): Promise<CustomResponse<string>>
+
+    abstract getURLReport(personId: number): string
+    
 }

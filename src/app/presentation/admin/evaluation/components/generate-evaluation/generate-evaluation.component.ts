@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CloseEvaluationCommand } from 'app/application/evaluations/close-evaluation/close-evaluation.command';
 import { GetCurrentByPersonQuery } from 'app/application/evaluations/get-current-by-person/get-current-by-person.query';
+import { GetReportURLQuery } from 'app/application/evaluations/get-report-url/get-report-url.query';
 import { SaveEvaluationCommand } from 'app/application/evaluations/save-evaluation/save-evaluation.command';
 import { SaveEvaluationRequest } from 'app/domain/evaluations/save-evaluation.request';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
@@ -21,6 +22,8 @@ export class GenerateEvaluationComponent {
     private _getCurrentByPersonQuery: GetCurrentByPersonQuery,
     private _saveEvaluationCommand: SaveEvaluationCommand,
     private _closeEvaluationCommand: CloseEvaluationCommand,
+    private _getReportURLQuery: GetReportURLQuery,
+
   ) { }
 
   async ngOnInit() {
@@ -42,12 +45,7 @@ export class GenerateEvaluationComponent {
   }
 
   private loadReport() {
-    var params = {
-      "ds0.personid": this.personId
-    };
-    var paramsAsString = JSON.stringify(params);
-    var encodedParams = encodeURIComponent(paramsAsString);
-    this.url = `https://lookerstudio.google.com/embed/reporting/c2ed55a1-a524-453c-93ae-2d9687422a53/page/iC47D?params=${encodedParams}`;
+    this.url = this._getReportURLQuery.execute(this.personId).data;
   }
 
   async loadEvaluation() {
