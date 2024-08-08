@@ -1,0 +1,44 @@
+<div class="generate-evaluation">
+
+  <div class="flex">
+
+    <iframe style="
+    background: #f1f5f4;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px 0 rgba(70, 76, 79, 0.2);
+    width: 100vw;
+    height: 100vh;
+  " [src]='url | safe' frameborder="0" allowfullscreen
+      sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+  </div>
+  <p-divider />
+  <form [formGroup]="formGroup">
+    <div class="flex flex-column gap-2 mb-4">
+      <label>Puntaje</label>
+      <p-rating formControlName="score" stars="5">
+        <ng-template pTemplate="onicon">
+          <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png" width="25px"
+            height="25px" />
+        </ng-template>
+        <ng-template pTemplate="officon">
+          <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px" height="25px" />
+        </ng-template>
+      </p-rating>
+    </div>
+    <div class="flex flex-column gap-2 mb-4">
+      <label>Habilidades en las que supero</label>
+      <textarea rows="5" cols="30" pInputTextarea [autoResize]="true" formControlName="skillsReached">
+    </textarea>
+    </div>
+    <div class="flex flex-column gap-2 mb-4">
+      <label for="username">Habilidades a mejorar</label>
+      <textarea rows="5" cols="30" pInputTextarea [autoResize]="true" formControlName="skillsToImprove">
+    </textarea>
+    </div>
+  </form>
+  <div class="flex flex-row gap-2">
+    <button pButton pRipple label="Guardar" class="col-6 p-button-primary" (click)="saveEvaluation()"></button>
+    <button pButton pRipple label="Cerrar Evaluación" class="col-6 p-button-secondary" (click)="closeEvaluation()"></button>
+  </div>
+</div>

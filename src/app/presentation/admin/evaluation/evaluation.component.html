@@ -1,0 +1,48 @@
+<div class="grid">
+    <h2 class="col-6">Desarrolladores</h2>
+    <div class="col-12">
+      <p-table
+        [value]="persons"
+        [paginator]="true"
+        [rows]="5"
+        [tableStyle]="{ 'min-width': '50rem' }"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>External ID</th>
+            <th>Email</th>
+            <th>Opciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-person>
+          <tr>
+            <td>{{ person.id }}</td>
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.externalId }}</td>
+            <td>{{ person.email }}</td>
+            <td>
+              <p-button
+                icon="pi pi-pencil"
+                pTooltip="Realizar evaluación"
+                [rounded]="true"
+                class="mr-2"
+                severity="success"
+                (onClick)="createEvaluation(person)"
+              />
+              <p-button
+                icon="pi pi-list"
+                pTooltip="Listar evaluación"
+                [rounded]="true"
+                class="mr-2"
+                severity="info"
+                (onClick)="listEvaluation(person)"
+              />
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+  

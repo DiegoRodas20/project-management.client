@@ -5,6 +5,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { EventLogsComponent } from "./event-logs/event-logs.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { ProjectsComponent } from "./projects/projects.component";
+import { EvaluationComponent } from "./evaluation/evaluation.component";
 
 const routes: Routes = [
     {
@@ -22,6 +23,10 @@ const routes: Routes = [
             {
                 path: ADMIN_PATH.EVENT_LOGS,
                 component: EventLogsComponent
+            },
+            {
+                path: ADMIN_PATH.EVALUATION,
+                component: EvaluationComponent
             },
         ]
     }

@@ -19,6 +19,18 @@ import { GetUnassignedEpicsHandler } from "./work-items/get-unassigned-epics/get
 import { GetUnassignedEpicsQuery } from "./work-items/get-unassigned-epics/get-unassigned-epics.query";
 import { GetWorkItemsByProjectHandler } from "./work-items/get-work-items-by-project/get-work-items-by-project.handler";
 import { GetWorkItemsByProjectQuery } from "./work-items/get-work-items-by-project/get-work-items-by-project.query";
+import { GetPersonsQuery } from "./persons/get-persons/get-persons.query";
+import { GetPersonsHandler } from "./persons/get-persons/get-persons.handler";
+import { GetCurrentByPersonHandler } from "./evaluations/get-current-by-person/get-current-by-person.handler";
+import { GetCurrentByPersonQuery } from "./evaluations/get-current-by-person/get-current-by-person.query";
+import { SaveEvaluationCommand } from "./evaluations/save-evaluation/save-evaluation.command";
+import { SaveEvaluationHandler } from "./evaluations/save-evaluation/save-evaluation.handler";
+import { CloseEvaluationCommand } from "./evaluations/close-evaluation/close-evaluation.command";
+import { CloseEvaluationHandler } from "./evaluations/close-evaluation/close-evaluation.handler";
+import { GetByPersonHandler } from "./evaluations/get-by-person/get-by-person.handler";
+import { GetByPersonQuery } from "./evaluations/get-by-person/get-by-person.query";
+import { GetReportURLQuery } from "./evaluations/get-report-url/get-report-url.query";
+import { GetReportURLHandler } from "./evaluations/get-report-url/get-report-url.handler";
 
 @NgModule({
     providers: [
@@ -39,6 +51,17 @@ import { GetWorkItemsByProjectQuery } from "./work-items/get-work-items-by-proje
 
         // Utils
         { provide: GetEventsLogsQuery, useClass: GetEventsLogsHandler },
+
+        //Person
+        { provide: GetPersonsQuery, useClass: GetPersonsHandler },
+
+        //Evaluation
+        { provide: GetCurrentByPersonQuery, useClass: GetCurrentByPersonHandler },
+        { provide: SaveEvaluationCommand, useClass: SaveEvaluationHandler },
+        { provide: CloseEvaluationCommand, useClass: CloseEvaluationHandler },
+        { provide: GetByPersonQuery, useClass: GetByPersonHandler },
+        { provide: GetReportURLQuery, useClass: GetReportURLHandler },
+
     ]
 })
 export class ApplicationModule { }
